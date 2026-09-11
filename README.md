@@ -4,7 +4,14 @@ A virtual life-and-travel game: work through your real-life tasks (lectures, Lee
 
 > "I don't stop my life to travel the world; I travel the world while living my life."
 
-Live file: `index.html` — a single self-contained page, no build step, no dependencies. Open it directly in a browser or serve it with GitHub Pages.
+No build step, no dependencies. Open `index.html` in a browser or serve the folder with GitHub Pages.
+
+```
+index.html          page shell
+css/styles.css      styles
+js/data/route.js    the ROUTE array — add cities here
+js/app.js           game logic, views, save
+```
 
 ## How the game works
 
@@ -36,14 +43,14 @@ When a city on the route doesn't have a `map` object yet, opening it in the app 
 
 To add it to the project:
 
-1. Open `index.html` and find the `ROUTE` array near the top of the `<script>` block.
+1. Open `js/data/route.js` and find the `ROUTE` array.
 2. Find the placeholder entry for that city (e.g. `{ id:"baku", city:"Baku", country:"Azerbaijan", flag:"🇦🇿" }`).
 3. Replace it with the full object Claude returns (matching the structure of the existing built cities — `id`, `city`, `country`, `flag`, `map: { identity, why, hotel, core, optional, next }`).
 4. Optionally add one more placeholder entry after it for the next city in the route.
 5. Commit and push.
 
 ```bash
-git add index.html
+git add js/data/route.js
 git commit -m "Add City Experience Map: <city name>"
 git push
 ```
