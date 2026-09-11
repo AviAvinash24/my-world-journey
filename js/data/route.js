@@ -280,8 +280,36 @@ const ROUTE = [
         { name:"Aerial views of the white city", desc:"Satellite/aerial imagery of Ashgabat's marble skyline, worth seeing purely for how uniform it is." },
         { name:"Kow Ata Underground Lake (day trip)", desc:"A warm underground lake in a cave system outside the city, a popular local day-trip spot." }
       ],
-      next: "Baku, Azerbaijan — continuing the route into the Caucasus (not yet mapped)."
+      next: "Baku, Azerbaijan — continuing west across the Caspian into the Caucasus."
     }
   },
-  { id:"baku", city:"Baku", country:"Azerbaijan", flag:"🇦🇿", lat: 40.4093, lng: 49.8671, tz: "Asia/Baku", accent: "#2A5F7A" }
+  {
+    id: "baku",
+    city: "Baku",
+    country: "Azerbaijan",
+    flag: "🇦🇿",
+    lat: 40.4093, lng: 49.8671, tz: "Asia/Baku", accent: "#2A5F7A",
+    map: {
+      identity: "Baku is a windy Caspian oil city where a UNESCO-walled medieval core sits in the shadow of three glass flame towers — built on a peninsula that has been burning, literally, for millennia.",
+      why: "Continuing west from Ashgabat across the Caspian into the Caucasus — Baku is the natural first Caucasus capital before the route turns inland to Tbilisi.",
+      hotel: { name: "Fairmont Baku, Flame Towers", note: "The city's most photographed building is also a hotel — staying here means the skyline you've been looking at is the building you're sleeping in." },
+      core: [
+        { id:"maidentower", name:"Icherisheher & Maiden Tower", tag:"History & Architecture", desc:"The UNESCO-listed walled Old City, anchored by the 12th-century Maiden Tower (Qız Qalası) whose original purpose is still genuinely debated — fortress, temple, observatory, or all three.", explore:"A virtual walk of the fortress walls plus the competing theories of what the Maiden Tower actually was." },
+        { id:"shirvanshahs", name:"Palace of the Shirvanshahs", tag:"History & Politics", desc:"A 15th-century royal complex inside the Old City — the seat of the Shirvan dynasty that ruled this coast long before the oil boom remade everything around it.", explore:"Photos of the palace courtyard and a short read on the Shirvanshahs and Baku's place on medieval Caspian trade routes." },
+        { id:"flametowers", name:"Flame Towers & Highland Park", tag:"Geography & Architecture", desc:"Three flame-shaped glass towers on a ridge above the bay, LED-lit as fire at night — the modern skyline of a city whose name and identity have always been fire and wind.", explore:"Night footage of the LED flame display, then a short read on why fire (oil seeps, Zoroastrian temples, Azerbaijan as 'land of fire') is the city's through-line." },
+        { id:"heydaraliyev", name:"Heydar Aliyev Center", tag:"Architecture & Culture", desc:"Zaha Hadid's flowing white cultural center — no corners, no hard edges — the single most famous contemporary building in the Caucasus.", explore:"A visual walkthrough of the building's curves and a short piece on Hadid's design, plus what's actually exhibited inside." },
+        { id:"bakuboulevard", name:"Baku Boulevard (Dənizkənarı)", tag:"Local Life & Food", desc:"A long Caspian waterfront promenade where the city actually lives in the evening — tea, qutab, pomegranate, and the sea that made Baku a port long before it was an oil capital.", explore:"Footage of an evening on the boulevard, then look up a real Azerbaijani meal (plov, dolma, qutab) and mentally order it for the night." }
+      ],
+      optional: [
+        { name:"Ateshgah Fire Temple", desc:"A 17th–18th century Zoroastrian/Hindu fire temple built over a natural gas seep on the Absheron Peninsula." },
+        { name:"Yanar Dag (Burning Mountain)", desc:"A hillside that has been continuously on fire from a natural gas seep, possibly for centuries." },
+        { name:"Gobustan Rock Art", desc:"UNESCO petroglyphs and mud volcanoes, a day trip south of the city into a much older Azerbaijan." },
+        { name:"Azerbaijan Carpet Museum", desc:"A building shaped like a rolled carpet, holding one of the world's great carpet collections." },
+        { name:"Nizami Street", desc:"The city's main pedestrian shopping street, lit up at night — the everyday commercial spine." },
+        { name:"Baku Funicular & Martyrs' Lane", desc:"A short funicular up to Highland Park and the memorial overlooking the bay." }
+      ],
+      next: "Tbilisi, Georgia — a short hop west across the Caucasus (not yet mapped)."
+    }
+  },
+  { id:"tbilisi", city:"Tbilisi", country:"Georgia", flag:"🇬🇪", lat: 41.7151, lng: 44.8271, tz: "Asia/Tbilisi", accent: "#8A3B3B" }
 ];
