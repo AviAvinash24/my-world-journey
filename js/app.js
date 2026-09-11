@@ -159,6 +159,27 @@ async function saveProgress(id){
   await storageSet('progress:' + id, JSON.stringify(progressCache[id]));
 }
 
+const SESSION_KEY = 'journey:session';
+const VIEWS = ['city', 'map', 'passport', 'journal'];
+
+async function saveSession(){
+  await storageSet(SESSION_KEY, JSON.stringify({
+    lastCityId: currentId,
+    lastView: currentView
+  }));
+}
+
+async function restoreSession(){
+  try{
+    const raw = await storageGet(SESSION_KEY);
+    if (!raw) return;
+    const session = JSON.parse(raw);
+    const cityIndex = ROUTE.findIndex(c => c.id === session.lastCityId);
+    if (cityIndex >= 0 && await isUnlocked(cityIndex)) currentId = session.lastCityId;
+    if (VIEWS.includes(session.lastView)) currentView = session.lastView;
+  }catch(e){ /* first visit or bad session data */ }
+}
+
 /* ---------------- JOURNEY STATS ---------------- */
 async function journeyStats(){
   let cities = 0, arrivals = 0, journal = 0, km = 0;
@@ -763,6 +784,7 @@ async function renderAll(){
   await renderMain();
   await renderSidebar();
   renderOverlays();
+  await saveSession();
 }
 
 document.addEventListener('keydown', (e) => {
@@ -787,4 +809,4 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-renderAll();
+restoreSession().then(renderAll);
